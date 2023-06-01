@@ -2,9 +2,9 @@
 	<div class="app">
 		<el-container class="container1">
 			<el-header class="header" height="60px">
-				<el-page-header @back="back" content="忘川风华录随机概率模拟器"/>
+				<el-page-header @back="location.assign('/../..')" content="忘川风华录随机概率模拟器"/>
 			</el-header>
-			<el-container>
+			<el-container class="container2">
 				<el-aside class="menubar" width="100px">
 					<el-menu class="menu" default-active="card" router>
 						<el-menu-item index="card"><span>抽卡</span></el-menu-item>
@@ -24,29 +24,6 @@
 	</div>
 </template>
 
-<script>
-import Card from "@/components/card.vue";
-import Equipment from "@/components/equipment.vue";
-import Cat from "@/components/cat.vue";
-import CardG from "@/components/card-g.vue";
-import EquipmentG from "@/components/equipment-g.vue";
-import CatG from "@/components/cat-g.vue";
-import CatB from "@/components/cat-b.vue";
-import router from "@/router";
-
-export default {
-    components: {CatB, CardG, CatG, EquipmentG, Cat, Equipment, Card},
-    data() {
-        return {}
-    },
-    methods: {
-        back() {
-            location.assign('/../..')
-        }
-    }
-}
-</script>
-
 <style>
 .app {
     height: 100%;
@@ -54,6 +31,11 @@ export default {
 
 .container1 {
     height: 100%;
+}
+
+.container2 {
+    height: calc(100% - 60px);
+    width: 100%;
 }
 
 .header {
